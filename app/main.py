@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import pandas as pd
 import joblib
+from pathlib import Path
 
 from app.schema import LoanInput
 
@@ -18,7 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = joblib.load("app/loan_prediction_model.pkl")
+
+
+BASE_DIR = Path(__file__).resolve().parent
+model = joblib.load(BASE_DIR / "loan_prediction_model.pkl")
 
 FEATURES = [
     "Gender",
