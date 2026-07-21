@@ -5,7 +5,7 @@
     "buildCommand": "echo 'Build complete'"
   },
   "deploy": {
-    "startCommand": "uvicorn app:app --reload",
+    "startCommand": "uvicorn app.main:app --reload",
     "restartPolicyType": "ON_FAILURE"
   }
 }
