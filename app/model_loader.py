@@ -1,3 +1,5 @@
+from pathlib import Path
 import joblib
 
-model = joblib.load("app/loan_prediction_model.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+model = joblib.load(BASE_DIR / "loan_prediction_model.pkl")
